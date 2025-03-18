@@ -586,7 +586,7 @@ body {
 }
 
 .footer-social-container {
-
+    margin-right: 80px;
 }
 
 .footer-social-title {
@@ -619,8 +619,90 @@ body {
     fill: #f4f4fd;
 }
 
+.subscribe-form {}
 
 
+.subscribe-label {
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.subscribe-form-input {
+    border: 1px solid #fff;
+    border-radius: 4px;
+    width: 264px;
+    height: 40px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    background-color: transparent;
+}
+
+
+.subscribe-form input[type="email"]::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    color: #fff;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+}
+
+.subscribe-btn {
+    margin-left: 24px;
+    border-radius: 4px;
+    padding: 8px 24px;
+    width: 165px;
+    height: 40px;
+    background-color: #4d5ae5;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    text-align: center;
+    color: #fff;
+    
+}
 
 
 /* #endregion Footer */
+
+
+/* #region Modal window */
+
+.backdrop {}
+
+.is-open {}
+
+.modal {}
+
+.modal-close-btn {}
+
+.modal-title {}
+
+.modal-form {}
+
+.modal-wrapper {}
+
+.modal-label {}
+
+.modal-field {}
+
+.modal-input {}
+
+.modal-textarea {}
+
+.checkbox-wrapper {}
+
+.checkbox-input {}
+
+.modal-label-accept {}
+
+.privacy-link {}
+
+/* #region Modal window */
