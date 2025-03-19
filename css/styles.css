@@ -42,6 +42,19 @@ a {
     
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
 body {
     font-family: "Roboto", sans-serif;
     color: #434455;
@@ -661,9 +674,9 @@ body {
     line-height: 2;
     letter-spacing: 0.04em;
     color: #fff;
-    padding-top: 8px;
-    padding-bottom: 8px;
     padding-left: 16px;
+    padding-top: 8px;
+    
 }
 
 .subscribe-btn {
@@ -721,8 +734,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 408px;
-    height: 90%;
-    max-height: 584px;
+    min-height: 584px;
     border-radius: 4px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     background: #fcfcfc;
@@ -740,17 +752,29 @@ body {
     width: 24px;
     height: 24px;
     border-radius: 100%;
-    border-color: var(--cornflower);
-    background-color: rgba(46, 47, 66, 0.4);
-    display: block;
+    display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 100%;
+    background-color: #e7e9fc;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.1);
+    transition: background-color var(--animation);
+}
 
+.modal-close-btn:hover {
+    background-color: var(--ocean);
 }
 
 .close-btn-icon {
-    fill: black;
-    stroke: black;
+    fill: var(--navy-blue);
+    stroke: var(--navy-blue);
+    transition: fill var(--animation), stroke var(--animation);
+}
+
+.modal-close-btn:hover .close-btn-icon {
+    fill: var(--white);
+    stroke: var(--white);
 }
 
 .modal-title {
@@ -778,11 +802,12 @@ body {
         letter-spacing: 0.04em;
         color: #8e8f99;
         margin-bottom: 4px;
-        
+        cursor: pointer;
 }
 
 .modal-field {
     position: relative;
+
 }
 
 .modal-input {
@@ -791,15 +816,33 @@ body {
         width: 100%;
         height: 40px;
         margin-bottom: 8px;
-        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 34px;
+        outline: transparent;
+        transition: border-color var(--animation);
+}
+
+.modal-input:focus {
+    border-color: var(--iris);
+}
+
+.modal-input:focus + .modal-icon {
+    fill: var(--iris);
+    stroke: var(--iris);
 }
 
 .modal-icon {
     position: absolute;
-    left: 0;
+    left: 16px;
     top: 50%;
     transform: translateY(-50%);
+    fill: var(--navy-blue);
+    stroke: var(--navy-blue);
+    transition: fill var(--animation), stroke var(--animation);
 }
+
 
 .modal-textarea {
     border: 1px solid rgba(46, 47, 66, 0.4);
@@ -807,16 +850,24 @@ body {
         width: 100%;
         height: 120px;
         resize: none;
+        padding-left: 2px;
         margin-bottom: 16px;
-        
+        outline: transparent;
+        transition: border-color var(--animation);
+}
+
+.modal-textarea:focus {
+    border-color: var(--iris);
 }
 
 .modal-textarea::placeholder {
     font-weight: 400;
         font-size: 12px;
-        line-height: 1.16667;
+        line-height: 1.17;
         letter-spacing: 0.04em;
         color: rgba(46, 47, 66, 0.4);
+        padding-left: 16px;
+        padding-top: 8px;
 }
 
 .checkbox-wrapper {
@@ -825,10 +876,35 @@ body {
 
 .checkbox-input {}
 
-.modal-label-accept {}
+.modal-label-accept {
+    font-weight: 400;
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.04em;
+        color: #8e8f99;
+}
+
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+    border-radius: 2px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    
+}
+
+.checkbox-input:checked + .modal-label-accept > .custom-checkbox {
+    border-radius: 2px;
+    fill: #404bbf;
+    border: 1px solid #404bbf;
+    background-color: var(--ocean);
+}
 
 .privacy-link {
-    line-height: 1.33333;
+    line-height: 1.33;
         text-decoration: underline;
         text-decoration-skip-ink: none;
         color: #4d5ae5;
