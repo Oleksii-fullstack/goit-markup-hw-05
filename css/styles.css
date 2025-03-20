@@ -772,14 +772,13 @@ body {
     background-color: #e7e9fc;
     border-width: 1px;
     border-color: rgba(0, 0, 0, 0.1);
-    transition: background-color var(--animation), border var(--animation), transform var(--animation);
+    transition: background-color var(--animation), border var(--animation);
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
     background-color: var(--ocean);
     border: none;
-    transform: rotate(180deg);
 }
 
 .close-btn-icon {
