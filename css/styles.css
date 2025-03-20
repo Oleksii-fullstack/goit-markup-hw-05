@@ -880,7 +880,7 @@ body {
         margin-bottom: 16px;
         outline: transparent;
         transition: border-color var(--animation);
-        color: inherit;
+        color: rgba(46, 47, 66, 0.4);
 }
 
 .modal-textarea:focus {
@@ -953,7 +953,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    transition: backbackground-color var(--animation);
+    transition: background-color var(--animation);
 }
 
 .modal-send-btn:hover,
