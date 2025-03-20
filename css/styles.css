@@ -633,7 +633,6 @@ body {
 }
 
 .footer-subscribe-container {
-    
 }
 
 
@@ -647,12 +646,11 @@ body {
     margin-bottom: 16px;
 }
 
-.footer-form-container {
-    display: flex;
-    column-gap: 24px;
-}
 
-.subscribe-form {}
+.subscribe-form {
+    display: flex;
+    gap: 24px;
+}
 
 
 .subscribe-label {}
@@ -662,6 +660,10 @@ body {
     border-radius: 4px;
     width: 264px;
     height: 40px;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    padding-left: 16px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     background-color: transparent;
     color: #fff;
@@ -685,17 +687,26 @@ body {
     padding-bottom: 8px;
     padding-left: 24px;
     padding-right: 64px;
-    width: 165px;
+    min-width: 165px;
     height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #4d5ae5;
+    border: none;
+    border-radius: 4px;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.04em;
-    text-align: center;
     color: #fff;
     position: relative;
-    
+    transition: background-color var(--animation);
+}
+
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+    background-color: #404bbf;
 }
 
 .subscribe-icon {
@@ -721,6 +732,7 @@ body {
     height: 100%;
     opacity: 0;
     pointer-events: none;
+    transition: opacity var(--animation), visibility var(--animation);
 }
 
 .is-open {
@@ -742,7 +754,7 @@ body {
     padding-bottom: 24px;
     padding-left: 24px;
     padding-right: 24px;
-
+    transition: transform var(--animation);
 }
 
 .modal-close-btn {
@@ -751,30 +763,35 @@ body {
     right: 24px;
     width: 24px;
     height: 24px;
-    border-radius: 100%;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 100%;
+    padding: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: #e7e9fc;
     border-width: 1px;
     border-color: rgba(0, 0, 0, 0.1);
-    transition: background-color var(--animation);
+    transition: background-color var(--animation), border var(--animation), transform var(--animation);
 }
 
-.modal-close-btn:hover {
+.modal-close-btn:hover,
+.modal-close-btn:focus {
     background-color: var(--ocean);
+    border: none;
+    transform: rotate(180deg);
 }
 
 .close-btn-icon {
     fill: var(--navy-blue);
     stroke: var(--navy-blue);
-    transition: fill var(--animation), stroke var(--animation);
+    transition: fill var(--animation);
 }
 
-.modal-close-btn:hover .close-btn-icon {
-    fill: var(--white);
-    stroke: var(--white);
+.modal-close-btn:hover .close-btn-icon,
+.modal-close-btn:focus .close-btn-icon {
+    fill: #ffffff;
+    stroke: #ffffff;
 }
 
 .modal-title {
@@ -792,17 +809,18 @@ body {
 }
 
 .modal-wrapper {
-    
+    margin-bottom: 8px;
 }
 
 .modal-label {
     font-weight: 400;
         font-size: 12px;
-        line-height: 1.16667;
+        line-height: 1.17;
         letter-spacing: 0.04em;
         color: #8e8f99;
         margin-bottom: 4px;
         cursor: pointer;
+        display: block;
 }
 
 .modal-field {
@@ -811,7 +829,7 @@ body {
 }
 
 .modal-input {
-    border: 1px solid rgba(46, 47, 66, 0.4);
+        border: 1px solid rgba(46, 47, 66, 0.4);
         border-radius: 4px;
         width: 100%;
         height: 40px;
@@ -819,8 +837,9 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding-left: 34px;
+        padding-left: 38px;
         outline: transparent;
+        background-color: transparent;
         transition: border-color var(--animation);
 }
 
@@ -840,9 +859,12 @@ body {
     transform: translateY(-50%);
     fill: var(--navy-blue);
     stroke: var(--navy-blue);
-    transition: fill var(--animation), stroke var(--animation);
+    transition: fill var(--animation);
 }
 
+.modal-wrapper-textarea {
+    margin-bottom: 16px;
+}
 
 .modal-textarea {
     border: 1px solid rgba(46, 47, 66, 0.4);
@@ -850,10 +872,15 @@ body {
         width: 100%;
         height: 120px;
         resize: none;
-        padding-left: 2px;
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.04em;
+        background-color: transparent;
+        padding: 8px 16px;
         margin-bottom: 16px;
         outline: transparent;
         transition: border-color var(--animation);
+        color: inherit;
 }
 
 .modal-textarea:focus {
@@ -866,8 +893,6 @@ body {
         line-height: 1.17;
         letter-spacing: 0.04em;
         color: rgba(46, 47, 66, 0.4);
-        padding-left: 16px;
-        padding-top: 8px;
 }
 
 .checkbox-wrapper {
@@ -876,7 +901,7 @@ body {
 
 .checkbox-input {}
 
-.modal-label-accept {
+.checkbox-label-privacy {
     font-weight: 400;
         font-size: 12px;
         line-height: 1.17;
@@ -885,21 +910,21 @@ body {
 }
 
 .custom-checkbox {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     fill: transparent;
     border-radius: 2px;
     border: 1px solid rgba(46, 47, 66, 0.4);
-    
+    transition: background-color var(--animation), border var(--animation), fill var(--animation);
 }
 
-.checkbox-input:checked + .modal-label-accept > .custom-checkbox {
+.checkbox-input:checked + .checkbox-label-privacy > .custom-checkbox {
     border-radius: 2px;
-    fill: #404bbf;
-    border: 1px solid #404bbf;
+    fill: #F4F4FD;
+    border: none;
     background-color: var(--ocean);
 }
 
@@ -913,7 +938,7 @@ body {
 .modal-send-btn {
     border-radius: 4px;
     padding: 16px 32px;
-    width: 169px;
+    min-width: 169px;
     height: 56px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     background-color: #4d5ae5;
@@ -928,6 +953,12 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    transition: backbackground-color var(--animation);
 }
 
-/* #region Modal window */
+.modal-send-btn:hover,
+.modal-send-btn:focus {
+    background-color: #404bbf;
+}
+
+/* #endregion Modal window */
