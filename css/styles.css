@@ -832,10 +832,6 @@ body {
         border-radius: 4px;
         width: 100%;
         height: 40px;
-        margin-bottom: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         padding-left: 38px;
         outline: transparent;
         background-color: transparent;
@@ -876,7 +872,6 @@ body {
         letter-spacing: 0.04em;
         background-color: transparent;
         padding: 8px 16px;
-        margin-bottom: 16px;
         outline: transparent;
         transition: border-color var(--animation);
         color: rgba(46, 47, 66, 0.4);
@@ -906,6 +901,7 @@ body {
         line-height: 1.17;
         letter-spacing: 0.04em;
         color: #8e8f99;
+        margin-bottom: 4px;
 }
 
 .custom-checkbox {
